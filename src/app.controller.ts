@@ -1,4 +1,13 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { AppService } from './app.service';
 import { CreateTodoDto } from './dtos/create-todo.dto';
 
@@ -21,5 +30,9 @@ export class AppController {
   @Delete(':id')
   async remove(@Param('id') id: number) {
     return await this.appService.remove(id);
+  }
+  @Put(':id')
+  async update(@Param('id') id: number, @Body() todo: CreateTodoDto) {
+    return await this.appService.update(id, todo);
   }
 }
