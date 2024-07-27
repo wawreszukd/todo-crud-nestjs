@@ -1,0 +1,16 @@
+### CREATE NEW USER
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "title": "test",
+  "description": "test"
+}
+### GET ALL USERS
+GET http://localhost:3000
+
+### GET USER BY ID
+GET http://localhost:3000/1
+
+### DELETE USER BY ID
+DELETE http://localhost:3000/1
